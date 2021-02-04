@@ -34,17 +34,19 @@ public class Cuenta {
 		return "titular: " + this.titular + "\ncantidad: " + cantidad;
 	}
 	
-	public void ingresar (double cantidad) {
+	public double ingresar (double cantidad) {
 		if (cantidad > 0) {
 			this.cantidad += cantidad;
 		}
+		return this.cantidad;
 	}
 	
-	public void retirar (double cantidad) {
+	public double retirar (double cantidad) {
 		if ((this.cantidad - cantidad) <= 0) {
 			this.cantidad = 0;
 		}else {
 			this.cantidad -= cantidad;
 		}
+		return this.cantidad;
 	}
 }
